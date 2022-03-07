@@ -1,24 +1,23 @@
+
 # ol-track
 
-## Project setup
-```
-npm install
-```
+ol-track基于`ol`v6以上版本,实现在地图中车辆及人员轨迹的回放,使用之前请确认ol版本。
 
-### Compiles and hot-reloads for development
+### 安装
 ```
-npm run serve
+npm install ol-track
 ```
-
-### Compiles and minifies for production
+### 使用
 ```
-npm run build
+import olTrack from "ol-track"
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 方法
+ * pamars{option}
+ * event
+ * startAnimation:运动
+ * stopAnimation:停止
+ * setSpeed:设置速度
+ * setNewRoute:重新设置路线
+ * moveStart:回到起点
+ * getClickFeature:获取点数据
+ * addPopup:向地图中添弹窗

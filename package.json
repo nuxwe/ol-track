@@ -1,7 +1,6 @@
 {
   "name": "ol-track",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.2",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "ol": "^6.13.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -38,5 +38,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ol-track ```",
+  "main": "src/plugin/index.js",
+  "author": "",
+  "license": "ISC"
 }
