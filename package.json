@@ -1,6 +1,6 @@
 {
   "name": "ol-track",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

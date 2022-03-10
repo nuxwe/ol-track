@@ -2,6 +2,8 @@
   <div class="content">
     <div id="map" />
     <div class="btnGroup">
+      <button @click="setSpeed(500)">加速</button>
+      <button @click="setSpeed(100)">减速</button>
       <button @click="startAnimation">运动</button>
       <button @click="stopAnimation">停止</button>
     </div>
@@ -63,6 +65,9 @@ export default {
     startAnimation() {
       this.oltrack.startAnimation();
     },
+    setSpeed(val) {
+      this.oltrack.setSpeed(val)
+    }
   },
 };
 </script>
