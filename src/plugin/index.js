@@ -24,7 +24,11 @@ import moveImage from "./fly.png";
 import home from "./home.png";
 class olTrack {
   constructor(option) {
-    this.map = option.map;// 地图实列
+    if (option.map && option.map instanceof Map) {
+      this.map = option.map
+    } else {
+      throw new Error('传入的不是地图对象！')
+    }// 地图实列
     this.speedInput = option.speed || 100;// 速度
     this.routeCoords = option.routeCoords || [];// 路线数组
     this.lineColor = option.lineColor || 'red';// 路线颜色
