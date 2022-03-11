@@ -6,6 +6,8 @@
       <button @click="setSpeed(100)">减速</button>
       <button @click="startAnimation">运动</button>
       <button @click="stopAnimation">停止</button>
+      <button @click="moveStart">回到起点</button>
+      <button @click="addPopup">添加弹窗</button>
     </div>
   </div>
 </template>
@@ -57,6 +59,9 @@ export default {
         [116.374614, 39.889345],
       ],
     });
+    this.oltrack.getClickFeature(res=>{
+      alert(`点击信息：${res}`);
+    })
   },
   methods: {
     stopAnimation() {
@@ -67,6 +72,18 @@ export default {
     },
     setSpeed(val) {
       this.oltrack.setSpeed(val)
+    },
+    moveStart() {
+      this.oltrack.moveStart()
+    },
+    addPopup() {
+      this.oltrack.addPopup({
+        el:`<span class="close">点我关闭弹窗</span>`,
+        btn: 'close',
+        position: [116.372924, 39.932457],
+      },res=>{
+        this.map.removeOverlay(res);
+      })
     }
   },
 };
@@ -87,5 +104,10 @@ export default {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+button{
+  background: #fff;
+  padding: 5px 16px;
+  margin: 0px 5px;
 }
 </style>

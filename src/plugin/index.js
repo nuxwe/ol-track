@@ -221,7 +221,7 @@ class olTrack {
   // 向地图中添加弹窗事件
   addPopup(option, cb) {
     const dom = document.createElement("div");
-    dom.className = "popip";
+    dom.className = "popup";
     dom.insertAdjacentHTML("beforeend", option.el);
     const marker = new Overlay({
       position: option.position,
