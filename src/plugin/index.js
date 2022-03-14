@@ -94,10 +94,9 @@ class olTrack {
     let routerList = [];
     if (!Array.isArray(this.routeCoords[0])) {
       // 处理数组
-      const routerList = this.routeCoords.map(item => {
+      routerList = this.routeCoords.map(item => {
         return [item.lat || item.latitude, item.lon || item.longitude];
       });
-      routerList.push(routerList);
     } else {
       routerList = this.routeCoords;
     }
@@ -111,10 +110,9 @@ class olTrack {
       return new Feature({
         type: 'icon',
         geometry: new Point(item),
-        typenem: routerList[index],
+        typenem: this.routeCoords[index],
       });
     });
-    // console.log(features);
     this.position = features[0].getGeometry().clone();
     this.geoMarker = new Feature({
       type: "geoMarker",
