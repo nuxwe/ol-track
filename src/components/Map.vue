@@ -8,6 +8,7 @@
       <button @click="stopAnimation">停止</button>
       <button @click="moveStart">回到起点</button>
       <button @click="addPopup">添加弹窗</button>
+      <button>截止{{datalist[datalist.length-1]}},已被下载{{ olrank }}次</button>
     </div>
   </div>
 </template>
@@ -19,6 +20,8 @@ import View from "ol/View";
 import XYZ from "ol/source/XYZ";
 import { Tile as TileLayer } from "ol/layer";
 import olTrack from "../plugin";
+import axios from "axios";
+import * as dayjs from 'dayjs';
 export default {
   name: "Map",
   data() {
@@ -26,6 +29,8 @@ export default {
       map: "",
       oltrack: "",
       center: [116.406138, 39.933425],
+      olrank: 0,
+      datalist: [],
     };
   },
   mounted() {
@@ -62,6 +67,7 @@ export default {
     this.oltrack.getClickFeature(res=>{
       alert(`点击信息：${res}`);
     })
+    this.getOlrank();
   },
   methods: {
     stopAnimation() {
@@ -84,7 +90,19 @@ export default {
       },res=>{
         this.map.removeOverlay(res);
       })
-    }
+    },
+    getOlrank() {
+      axios({
+        method: 'get',
+        url: `https://npm-stat.com/api/download-counts?package=ol-track&from=2022-03-01&until=${dayjs().format('YYYY-MM-DD')}`,
+      }).then(res=>{
+        this.datalist = Object.keys(res.data['ol-track']);
+        const data = res.data['ol-track'];
+        for(let key in data){
+          this.olrank += data[key];
+        }
+      });
+    },
   },
 };
 </script>
@@ -109,5 +127,7 @@ button{
   background: #fff;
   padding: 5px 16px;
   margin: 0px 5px;
+  border: 1px solid #999;
+  border-radius: 4px;
 }
 </style>

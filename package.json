@@ -1,13 +1,15 @@
 {
   "name": "ol-track",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.8",
     "ol": "^6.13.0",
     "vue": "^2.6.11"
   },
