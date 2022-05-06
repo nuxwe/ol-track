@@ -25,5 +25,5 @@ const oltrack = new olTrack({map:map});
 ```
 ### 关于
 - [Github](https://github.com/webnewshow/ol-track)
-- [demo](http://www.ctrippay.com)
+- [demo](https://webnewshow.github.io/ol-track-demo/)
 
