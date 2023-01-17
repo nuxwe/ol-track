@@ -4,8 +4,8 @@
     <div class="btnGroup">
       <button @click="setSpeed(500)">加速</button>
       <button @click="setSpeed(100)">减速</button>
-      <button @click="startAnimation">运动</button>
-      <button @click="stopAnimation">停止</button>
+      <button @click="start">运动</button>
+      <button @click="stop">停止</button>
       <button @click="moveStart">回到起点</button>
       <button @click="addPopup">添加弹窗</button>
       <button>截止{{datalist[datalist.length-1]}},已被下载{{ olrank }}次</button>
@@ -70,11 +70,11 @@ export default {
     this.getOlrank();
   },
   methods: {
-    stopAnimation() {
-      this.oltrack.stopAnimation();
+    stop() {
+      this.oltrack.stop();
     },
-    startAnimation() {
-      this.oltrack.startAnimation();
+    start() {
+      this.oltrack.start();
     },
     setSpeed(val) {
       this.oltrack.setSpeed(val)

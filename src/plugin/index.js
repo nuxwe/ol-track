@@ -1,11 +1,11 @@
-/**
+/**Animation
  * 保证OL版本在V6以上
  * pamars{option}
  * event             说明                    传递type              callback
- * startAnimation    运动
- * stopAnimation     停止
+ * start             运动
+ * stop              停止
  * setSpeed          设置速度                 Number
- * setNewRoute       重新设置路线             []
+ * setRoute          重新设置路线             []
  * moveStart         回到起点
  * getClickFeature   获取点数据                                    点击点的所有数据
  * addPopup          向地图中添弹窗           {}                   返回弹窗实例
@@ -146,7 +146,7 @@ class olTrack {
         this.distance = 0;
       }
       if (this.moveType === 'once') {
-        this.stopAnimation();
+        this.stop();
         this.distance = 0;
         return false;
       }
@@ -166,7 +166,7 @@ class olTrack {
     this.map.render();
   }
   // 运动
-  startAnimation() {
+  start() {
     if (!this.animating) {
       this.lastTime = Date.now();
       this.movefn = this.moveFeature.bind(this);
@@ -178,7 +178,7 @@ class olTrack {
     }
   }
   // 停止
-  stopAnimation() {
+  stop() {
     if (this.animating) {
       this.geoMarker.setGeometry(this.position);
       this.vectorLayer.un("postrender", this.movefn);
@@ -192,7 +192,7 @@ class olTrack {
     this.speedInput = Number(val);
   }
   // 改变路线
-  setNewRoute(val) {
+  setRoute(val) {
     this.routeCoords = val;
     this.moveStart();
   }

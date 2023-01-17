@@ -9,21 +9,19 @@ npm install ol-track
 ### 使用
 ```
 import olTrack from "ol-track";
-const oltrack = new olTrack({map:map});
+const olTrack = new olTrack({map:map});
 ```
-### 方法
+### Event
 ```
- * pamars{option}
- * event
- * startAnimation:运动
- * stopAnimation:停止
+ * start:运动
+ * stop:停止
  * setSpeed:设置速度
- * setNewRoute:重新设置路线
+ * setRoute:重新设置路线
  * moveStart:回到起点
  * getClickFeature:获取点数据
  * addPopup:向地图中添弹窗
 ```
 ### 关于
-- [Github](https://github.com/webnewshow/ol-track)
-- [demo](https://webnewshow.github.io/ol-track-demo/)
+- [Github](https://github.com/nuxwe)
+- [demo](https://nuxwe.github.io/ol-track-demo/)
 
