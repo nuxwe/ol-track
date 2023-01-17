@@ -1,17 +1,4 @@
-/**Animation
- * 保证OL版本在V6以上
- * pamars{option}
- * event             说明                    传递type              callback
- * start             运动
- * stop              停止
- * setSpeed          设置速度                 Number
- * setRoute          重新设置路线             []
- * moveStart         回到起点
- * getClickFeature   获取点数据                                    点击点的所有数据
- * addPopup          向地图中添弹窗           {}                   返回弹窗实例
- */
 
-// 依赖于 OL
 import Feature from "ol/Feature";
 import VectorLayer from "ol/layer/Vector";
 import Select from "ol/interaction/Select";
