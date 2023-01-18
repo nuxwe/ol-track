@@ -12,15 +12,15 @@ import olTrack from "ol-track";
 const olTrack = new olTrack({map:map});
 ```
 ### Event
-```
- * start:运动
- * stop:停止
- * setSpeed:设置速度
- * setRoute:重新设置路线
- * moveStart:回到起点
- * getClickFeature:获取点数据
- * addPopup:向地图中添弹窗
-```
+|事件名|说明|传值类型|默认值|
+|---|---|---|---|
+|start|开始运动|-|-|
+|stop|停止运动|-|-|
+|setSpeed|设置运动速度|Number|100|
+|setRoute|设置运动路线|Array|[]|
+|moveStart|回到起点|-|-|
+|getClickFeature|获取点数据|Object|-|
+|addPopup|向地图中添弹窗|HTML|-|
 ### 关于
 - [Github](https://github.com/nuxwe)
 - [demo](https://nuxwe.github.io/ol-track-demo/)
